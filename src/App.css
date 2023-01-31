@@ -1,0 +1,359 @@
+/*  ===== MOBILE styles (reside at the top and are inherited by all devices) ===== */
+/*  ===== See tablet, desktop, and print @media queries at the bottom. */
+
+/*   ----- Imports  -----  */
+/* Add fonts from the app's server 
+@font-face {                
+  font-family: 'FontName';
+  src: url('FontName.woff2') format('woff2');
+} 
+*/                           
+
+/* ...or hosted services like Google Fonts 
+@import url(//fonts.googleapis.com/css?family=Font+Name);
+*/
+
+@import '../node_modules/modern-normalize/modern-normalize.css';
+/* npm install modern-normalize 
+  Resets elements for browser consistancy.  
+  http://nicolasgallagher.com/about-normalize-css/ 
+*/
+
+/* Component-specific stylesheets, if any 
+@import "component1.css";   
+*/
+
+/*   ----- Variables  -----  */
+:root {
+  --darkgreen: rgb(0, 66, 90);
+  --lightgreen: rgb(203, 224, 214);
+  --orange: rgb(73, 172, 197);
+  --redorange: rgb(252, 92, 0);
+  --offwhite: rgb(238, 242, 230);
+}
+
+/*  ----- Viewport ----- elements inherited by all remaining elements ----- */
+body {       /* Can alternatively define in html {} or :root {} */
+  color: var(--darkgreen);
+  background-color: var(--offwhite);
+  font-family: 'Lucida Sans', Arial, sans-serif;
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* ----- Anchors ----- Text links */
+/* a {}
+a:link {}
+a:hover {}
+a:active {}
+a:visited {} */
+
+/*  ----- Navigation ----- Override text links for navigation only.  */
+nav {
+  background-color: var(--orange);
+  font-size: 1.4em;
+  font-weight: bolder;
+  line-height: 1.15;
+  padding: .25em;
+  vertical-align: middle;
+}
+
+nav a {
+  color: var(--offwhite);
+  background-color: var(--redorange);
+  border: 2px solid var(--offwhite);
+  border-radius: .75em 0;
+  margin: .75em;
+  padding: .75em;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: block;
+}
+#links {
+  color: var(--darkgreen);
+}
+#links:hover {
+  color: var(--redorange);
+}
+
+#buttons {
+  color: var(--offwhite);
+  background-color: var(--redorange);
+  padding: 3px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+#buttons:hover {
+  background-color: var(--orange);
+  color: var(--darkgreen);
+  border-color: var(--redorange);
+  border: 1px;
+  font-weight: bold;
+}
+.edit:hover {
+  color: var(--redorange);
+}
+
+nav a:hover {
+  color: var(--redorange);
+  background-color: var(--offwhite);
+  border: 2px solid var(--redorange);
+}
+
+/*  ----- Page layout blocks -----  */
+header {
+  background-color: var(--redorange);
+  color: var(--offwhite);
+  border-bottom: 2px solid var(--offwhite);
+  font-size: 1.75em;
+  font-weight: lighter;
+  margin: 0;
+  padding: .2em;
+}
+
+main {
+  color: var(--darkgreen);
+  background-color: var(--offwhite);
+  border: none;
+  padding: 1% 2%;
+}
+
+/* section {} */
+
+article {
+  margin: 1em auto;
+  font-size: 1.2em;
+}
+
+/* #topic1 {}
+    #topic2 {}
+    #gallery1 {}
+    #gallery2 {}
+div {}
+aside {} */
+
+footer {
+  background-color: var(--redorange);
+  color: var(--offwhite);
+  border-top: 2px solid var(--redorange);
+  font-size: 1.1em;
+  font-weight: lighter;
+  margin-top: 1em;
+  padding: .1em;
+}
+
+.helptip {
+  position: relative;
+  text-align: left;
+  padding-left: 7em;
+  display: inline-block;
+}
+
+.helptip1 {
+  position: relative;
+  padding-left: 7em;
+}
+
+.helptip .helptiptext, .helptip1 .helptiptext {
+  visibility: hidden;
+  width: 25%;
+  border-radius: 1px;
+  background-color: var(--orange);
+  color: var(--darkgreen);
+  font-size: small;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.left {
+  text-align: left;
+  padding-left: 1em;
+}
+
+.helptip:hover .helptiptext, .helptip1:hover .helptiptext {
+  visibility: visible;
+}
+
+/*  -----  Typography  ----- */
+p {
+  line-height: 1.5em;
+}
+h1 {
+  font-size: 95%;
+}
+/* br {}
+ol, ul, dl {}
+li {}
+dt {}
+dd {}
+
+h1, h2, h3, h4, h5, h6 {} /* Define consistent font family.
+h1, h2 {
+  margin-bottom: -10px;
+}
+h3 {}
+h4 {}
+h5 {}
+h6 {}
+
+abbr {}
+acronym {}
+address {}
+blockquote {}
+  q {}
+  cite {}
+em {}
+hr {}
+mark {}
+s {}
+span {}
+strong {}
+sub {}
+sup {}
+time {} */
+
+/*  ----- Coding or instructional typography ----- */
+/* pre {}
+code {}
+kbd {}
+samp {}
+var {}
+del {} 
+ins {} */
+
+/*  ----- Table ----- */
+table {
+  border-collapse: collapse;
+  margin: 1em 0;
+  width: 100%;
+}
+
+#programTable {
+  text-align: left;
+}
+
+.col1 {
+  font-weight: bold;
+  width: 30%;
+}
+
+.tenperc {
+  width: 15%;
+  text-align: left;
+}
+
+#col2, #col5 {
+  width: 5%;
+}
+
+#col3 {
+  width: 15%;
+}
+
+#col4 {
+  width: 15%;
+}
+
+.mouse {
+  cursor: pointer;
+}
+
+/* caption {}
+thead {}
+tbody {}
+tfoot {} */
+
+tr, td {
+  border: 1px solid var(--darkgreen);
+}
+
+tr:nth-child(odd) {
+  background-color: var(--lightgreen);
+}
+
+th {
+  color: var(--offwhite);
+  background-color: var(--darkgreen);
+  padding: .3em;
+}
+
+td {
+  padding: .3em;
+  width: 33%;
+  font-size: .9em;
+}
+
+/* td:nth-child(1) {}
+colgroup {}
+data {}
+datalist {} */
+
+/*  ----- Form ----- */
+/* form {} */
+
+fieldset {
+  border: 2px solid var(--darkgreen);
+}
+
+/* legend {}
+label {} */
+
+button {
+  padding: .4em 1.2em;
+  font-family: 'Trebuchet MS', 'Lucida Sans', Arial, sans-serif;
+}
+
+input {
+  text-align: center;
+  margin: .5em;
+  padding: .4em;
+  font-family: 'Trebuchet MS', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* output {}
+meter {}
+progress {}
+select {}
+optgroup {}
+option {}
+textarea {} */
+
+/* ----- Media ----- */
+/* figure {}
+figcaption {} */
+
+img {
+  margin-top: 20px;
+}
+
+/* svg {}
+picture {}
+source {}
+iframe {}
+video {}
+audio {}
+embed {}
+object {} */
+
+
+@keyframes App-logo {}
+
+/*   ===== TABLET  media query overrides mobile styles ===== */
+@media all and (min-width: 600px) {
+  article {
+    width: 75%;
+  }
+  nav a {
+    display: inline;
+  }
+}
+
+/*   ===== DESKTOP  media query overrides mobile and tablet styles ===== */
+@media all and (min-width: 1080px) {
+
+}
+
+/*   ===== PRINT  media query overrides previous styles =====  */
+@media print {}
